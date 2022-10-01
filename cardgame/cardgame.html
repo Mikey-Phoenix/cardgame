@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <link rel="stylesheet" href="./cardgame.css">
+</head>
+<body>
+    <div class="audioContainer"><audio src="./AvatarTheLastAirbenderThemeSong.mp3" loop="loop" autoplay></audio></div>
+    <div class="turnOver">
+        <p class="turnMessage">Please turn your device over</p>
+    </div>
+    <div class="successContainer">
+        <div class="success">
+            <div class="successMessage">Congratulations! You Won!</div>
+        </div>
+    </div>
+    <section class="help-window">
+        <div class="helpNotes">
+            <div class="cancel"><p>&times;</p></div>
+            <h3>How To Play</h3>
+            <p>Once the <span class="yellow">Start</span> button is clicked you will be given six cards to play with. To play, click on any card until the card is slightly raised from the others. Once that is completed click on the card in the center of the page to complete your play. If you don't have a card to play just click the card with an <span class="yellow">A</span> in the middle beside the card in the center to pick another card, this will cause you to lose a turn.</p>
+            <h3>Rules Of The Game</h3>
+            <p>Once a card is placed in the center of page you can only play a card with an element that is the same or the element next to what it on the avatar cycle or a card with the symbols of all four elements symbolizing the avatar.</p>
+            <div class="cycle">
+                <img src="./avatarsymbols/fire_nation.jpg" alt="" id="fire">
+                <div class="angle" id="fire-air">></div>
+                <img src="./avatarsymbols/air_nomads.jpg" alt="" id="air">
+                <div class="angle" id="air-water">></div>
+                <img src="./avatarsymbols/Watertribe.jpg" alt="" id="water">
+                <div class="angle" id="water-earth">></div>
+                <img src="./avatarsymbols/Earth_kingdom.jpg" alt="" id="earth">
+                <div class="angle" id="earth-fire">></div>
+            </div>
+            <p>Be careful of the number on th card you play, playing a card with number less than what is on the deck will award you a loss. This means to stay in the game you have to play a card with a number greater than the number on the card you're playing on. This rule applies to all cards that do not have all four elements on it.</p>
+            <h3>How To Play On Each Card</h3>
+            <div class="howToPlayCards">
+                <div>
+                    <div class="helping">
+                        <div class="help-cards Fire">
+                            <p class="number">1</p>
+                        </div>
+                        <p>If a Fire card is on the deck you have to either play a Fire card or an Air card with a number greater than the one on the deck or play the Avatar card.</p>
+                    </div>
+                    <div class="helping">
+                        <div class="help-cards Air">
+                            <p class="number">1</p>
+                        </div>
+                        <p>If a Air card is on the deck you have to either play an Air card or a Water card with a number greater than the one on the deck or play the Avatar card.</p>
+                    </div>
+                    <div class="helping">
+                        <div class="help-cards Water">
+                            <p class="number">1</p>
+                        </div>
+                        <p>If a Water card is on the deck you have to either play a Water card or an Earth card with a number greater than the one on the deck or play the Avatar card.</p>
+                    </div>
+                    <div class="helping">
+                        <div class="help-cards Earth">
+                            <p class="number">1</p>
+                        </div>
+                        <p>If a Earth card is on the deck you have to either play an Earth card or a Fire card with a number greater than the one on the deck or play the Avatar card.</p>
+                    </div>
+                    <div class="helping">
+                        <div class="help-cards Avatar">
+                            <p class="number"></p>
+                        </div>
+                        <p>Any  card can be played on the Avatar card.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="top">
+        <div class="tiny">
+            <abbr title="help" class="help">?</abbr>
+            <abbr title="sound" class="music"><img src="./download-loudspeaker-speaker-white-icon-png-11637222221c0unycpyqq-removebg-preview.png" alt="" class="musicOn"></abbr>
+        </div>
+        <i class="fa-solid fa-volume-slash" style="z-index: 1000; color: black;"></i>
+        <div class="wins">Number of wins: <span class="winner">0</span></div>
+    </div>
+    <main>
+        <div class="cast">
+            <div class="times">You've won <span class="outer">0</span> rounds</div>
+            <button class="start">Start</button>
+            <div class="times">You've played <span class="inner">0</span> rounds</div>
+        </div>
+        <div class="computer-cards">
+
+        </div>
+        <div class="player-cards">
+
+        </div>
+        <div class="played-cards">
+            <p class="number">1</p>
+        </div>
+        <div class="market-cards">A</div>
+    </main>
+    <script src="./cardgame.js"></script>
+</body>
+</html>
