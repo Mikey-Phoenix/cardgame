@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./cardgame.css">
 </head>
 <body>
-    <div class="audioContainer"><audio src="./AvatarTheLastAirbenderThemeSong.mp3" loop="loop" autoplay></audio></div>
+    <!-- <div class="audioContainer"><audio src="./AvatarTheLastAirbenderThemeSong.mp3" loop="loop" autoplay></audio></div> -->
     <div class="turnOver">
         <p class="turnMessage">Please turn your device over</p>
     </div>
@@ -34,7 +34,8 @@
                 <img src="./avatarsymbols/Earth_kingdom.jpg" alt="" id="earth">
                 <div class="angle" id="earth-fire">></div>
             </div>
-            <p>Be careful of the number on th card you play, playing a card with number less than what is on the deck will award you a loss. This means to stay in the game you have to play a card with a number greater than the number on the card you're playing on. This rule applies to all cards that do not have all four elements on it.</p>
+            <p>You can play any number within the same element or play a card with a different element having the same number as the card that was played last.</p><br/>
+            <p>The game ends when the player wins, the player loses or when the market cards run out. There are a total of 50 market cards left after the start button is pressed, once all the market cards are exhausted a special round <span class="yellow">Tender!!!</span> is initiated that counts the number on each card the player and computer had before <span class="yellow">Tender!!!</span> was initiated. If the player has a total number less than that of computer the player wins else, the player loses. The only other way a player wins is by exhausting all their cards.</p>
             <h3>How To Play On Each Card</h3>
             <div class="howToPlayCards">
                 <div>
@@ -80,6 +81,8 @@
         <i class="fa-solid fa-volume-slash" style="z-index: 1000; color: black;"></i>
         <div class="wins">Number of wins: <span class="winner">0</span></div>
     </div>
+    <div class="player-life health"><div><span style="color: rgb(255, 9, 33);">M</span><span style="color: rgb(255, 120, 55);">E</span></div><span class="health-progress"><span class="actual-progress"></span></span></div>
+    <div class="computer-life health"><div><span style="color: rgb(255, 9, 33);">C</span><span style="color: rgb(255, 120, 55);">P</span></div><span class="health-progress"><span class="actual-progress"></span></span></div>
     <main>
         <div class="cast">
             <div class="times">You've won <span class="outer">0</span> rounds</div>
@@ -87,15 +90,30 @@
             <div class="times">You've played <span class="inner">0</span> rounds</div>
         </div>
         <div class="computer-cards">
-
+            
         </div>
         <div class="player-cards">
-
+            
         </div>
         <div class="played-cards">
-            <p class="number">1</p>
+            <p class="number" id="played_number">1</p>
         </div>
-        <div class="market-cards">A</div>
+        <div class="market-cards"><p><span style="color: rgb(255, 9, 33);">P</span><span style="color: rgb(255, 120, 55);">h</span><span style="color: rgb(67, 213, 220);">o</span><span style="color: rgb(122, 96, 92);">e</span><span style="color: rgb(198, 234, 232);">n</span><span style="color: rgb(0, 165, 244);">i</span><span style="color: rgb(148, 221, 104);">x</span></p></div>
+        <div class="tenderBox">
+            <p class="how">Lowest value wins!</p>
+            <table class="tenders">
+                <tr>
+                    <td class="tenderPlayer">Player</td>
+                    <td> = </td>
+                    <td class="playerTenderInner"></td>
+                </tr>
+                <tr>
+                    <td class="tenderComputer">Computer</td>
+                    <td> = </td>
+                    <td class="computerTenderInner"></td>
+                </tr>
+            </table>
+        </div>
     </main>
     <script src="./cardgame.js"></script>
 </body>

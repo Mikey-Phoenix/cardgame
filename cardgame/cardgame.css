@@ -281,6 +281,56 @@ h3{
     cursor: pointer;
 }
 
+.health {
+    border-radius: 50px;
+    height: 80vh;
+    width: 50px;
+    position: absolute;
+}
+.player-life {
+    left: 3%;
+}
+.computer-life {
+    right: 3%;
+}
+.health div {
+    position: absolute;
+    left: -25px;
+    z-index: +10 !important;
+    /* background-color: rgb(231, 230, 230); */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-family: cursive;
+    width: 100px;
+    height: 100px;
+
+}
+.health-progress {
+    border-radius: inherit;
+    background-image: linear-gradient(limegreen 50%, yellow, red);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: inherit;
+    height: 79%;
+    transition: all ease .3s;
+}
+.actual-progress {
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    /* background-color: rgba(0, 0, 0, 0.76); */
+    background-color: rgb(231, 230, 230);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: inherit;
+    height: 0%;
+    transition: all ease .3s;
+}
+
 main{
     border: 2px solid rgb(116, 81, 41);
     border-radius: 10px;
@@ -326,17 +376,21 @@ main{
 .computer-cards .computer-card{
     width: 15%;
     height: 100%;
-    border: 2px solid rgb(116, 81, 41);
-    background-color: rgb(116, 81, 41);
+    /* border: 2px solid rgb(116, 81, 41); */
+    background-color: rgb(231, 230, 230);
+    box-shadow: 0px 0px 5px rgb(148, 221, 104);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: cursive;
-    font-size: 70px;
 }
 .title{
-    transform: rotate(180deg);
+    font-family: cursive;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 0px 0px 1px black;
+
+    transform: rotate(90deg);
     color: rgb(231, 230, 230);
 }
 .player-cards{
@@ -354,6 +408,7 @@ main{
     height: 100%;
     border: 2px solid rgb(116, 81, 41);
     background-color: rgb(231, 230, 230);
+    color: rgb(116, 81, 41);
     background-size: 70%, 50%;
     background-repeat: no-repeat;
     background-position: center;
@@ -361,6 +416,48 @@ main{
     position: relative;
     cursor: pointer;
     transition: all ease .3s;
+}
+.fire-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(255, 120, 55) !important;
+    color: rgb(255, 120, 55) !important;
+}
+.water-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(67, 213, 220) !important;
+    color: rgb(67, 213, 220) !important;
+}
+.air-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(198, 234, 232) !important;
+    color: rgb(198, 234, 232) !important;
+}
+.rock-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(122, 96, 92) !important;
+    color: rgb(122, 96, 92) !important;
+}
+.cancel-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(255, 9, 33) !important;
+    color: rgb(255, 9, 33) !important;
+}
+.switch-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(0, 165, 244) !important;
+    color: rgb(0, 165, 244) !important;
+}
+.regenerate-style{
+    text-shadow: 0px 0px 1px black;
+    box-shadow: -1px -1px 5px black;
+    border-color: rgb(148, 221, 104) !important;
+    color: rgb(148, 221, 104) !important;
 }
 .active{
     transform: scale(1.2);
@@ -383,22 +480,31 @@ main{
     cursor: pointer;
 }
 .market-cards{
-    background-color: rgb(116, 81, 41);
+    /* background-color: rgb(116, 81, 41); */
+    background-color: rgb(231, 230, 230);
     position: absolute;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
     height: 40%;
     width: 15%;
-    border: 2px solid rgb(116, 81, 41);
+    /* border: 2px solid rgb(255, 9, 33); */
+    box-shadow: 0px 0px 5px rgb(255, 9, 33);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: cursive;
-    font-size: 70px;
     color: rgb(231, 230, 230);
     cursor: pointer;
+}
+.market-cards p {
+    text-shadow: 0px 0px 1px black;
+
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    transform: rotate(90deg);
 }
 .element{
     width: 70%;
@@ -412,9 +518,32 @@ main{
     width: fit-content;
     font-family: cursive;
     font-size: 20px;
-    color: rgb(116, 81, 41);
     margin-top: 10px;
     margin-left: 10px;
+}
+.tenderBox{
+    position: absolute;
+    top: 0%;
+    padding: 30px 0px 170px 0px;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(231, 230, 230, 0.493);
+    font-family: cursive;
+    color: rgb(116, 81, 41);
+    z-index: 1000;
+}
+.tenders{
+    display: flex;
+    flex-direction: column;
+}
+td{
+    text-align: center;
+    width: 150px;
 }
 
 @media only screen and (max-width: 639px) {
